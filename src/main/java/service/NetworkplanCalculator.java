@@ -9,5 +9,8 @@ public final class NetworkplanCalculator {
         //Comment from Alina
     }
 
+    public int calculateEndDate(int start, int duration) {
+        return start + duration;
+    }
 
 }
