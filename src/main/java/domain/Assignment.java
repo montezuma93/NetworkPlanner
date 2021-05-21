@@ -11,7 +11,7 @@ public class Assignment {
     private int latestStartDate;
     private int earliestEndDate;
     private int latestEndDate;
-
+//Eine einfache eingabe eines Kommentars
     private int duration;
 
     private List<org.springframework.scheduling.config.Task> predecessors;
