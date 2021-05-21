@@ -6,7 +6,9 @@ public final class NetworkplanCalculator {
         // Calculate Networkplan
         // This is a new commit
 
-        //Comment from Alina
+        // This is Mangal
+
+    
     }
 
 
