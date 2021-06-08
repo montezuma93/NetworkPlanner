@@ -11,10 +11,10 @@ public class Assignment {
 
     private int duration;
 
-    private List<org.springframework.scheduling.config.Task> predecessors;
-    private List<org.springframework.scheduling.config.Task> successors;
+    private List<Assignment> predecessors;
+    private List<Assignment> successors;
 
-    public Assignment(int duration, List<org.springframework.scheduling.config.Task> predecessors, List<org.springframework.scheduling.config.Task> successors) {
+    public Assignment(int duration, List<Assignment> predecessors, List<Assignment> successors) {
         this.duration = duration;
         this.predecessors = predecessors;
         this.successors = successors;
@@ -60,19 +60,19 @@ public class Assignment {
         this.duration = duration;
     }
 
-    public List<org.springframework.scheduling.config.Task> getPredecessors() {
+    public List<Assignment> getPredecessors() {
         return predecessors;
     }
 
-    public void setPredecessors(List<org.springframework.scheduling.config.Task> predecessors) {
+    public void setPredecessors(List<Assignment> predecessors) {
         this.predecessors = predecessors;
     }
 
-    public List<org.springframework.scheduling.config.Task> getSuccessors() {
+    public List<Assignment> getSuccessors() {
         return successors;
     }
 
-    public void setSuccessors(List<org.springframework.scheduling.config.Task> successors) {
+    public void setSuccessors(List<Assignment> successors) {
         this.successors = successors;
     }
 }

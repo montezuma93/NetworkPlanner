@@ -8,9 +8,10 @@ public final class NetworkplanCalculator {
         // This is Mangal
         // 1st comment © Max Becker (M-A-X-I-M)
         // 2nd comment © Max Becker (M-A-X-I-M)
-
-    
     }
 
+    int calculateEndDate(int start, int duration) {
+        return start + duration;
+    }
 
 }
