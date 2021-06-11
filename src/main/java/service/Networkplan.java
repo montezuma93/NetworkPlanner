@@ -2,11 +2,10 @@ package service;
 
 import domain.Assignment;
 
+import java.util.Collections;
 import java.util.List;
 
 public class Networkplan {
-
-
 
     private List<Assignment> assignments;
 
