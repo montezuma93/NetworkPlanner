@@ -4,6 +4,8 @@ import java.util.List;
 
 public class Assignment {
 
+    public String name;
+
     private int earliestStartDate;
     private int latestStartDate;
     private int earliestEndDate;
@@ -14,10 +16,11 @@ public class Assignment {
     private List<Assignment> predecessors;
     private List<Assignment> successors;
 
-    public Assignment(int duration, List<Assignment> predecessors, List<Assignment> successors) {
+    public Assignment(String name, int duration, List<Assignment> predecessors, List<Assignment> successors) {
         this.duration = duration;
         this.predecessors = predecessors;
         this.successors = successors;
+        this.name = name;
     }
 
     public int getEarliestStartDate() {

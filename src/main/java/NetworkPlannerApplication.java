@@ -11,12 +11,20 @@ import java.util.List;
 public class NetworkPlannerApplication {
 
     public static void main(String[] args) {
-
-        Assignment createFrontend = new Assignment(123, Collections.emptyList(), Collections.emptyList());
-        Networkplan networkplan = new Networkplan(Arrays.asList(createFrontend));
+        Assignment createBackend = null;
+        Assignment createFrontend = new Assignment("frontend",10, Arrays.asList(createBackend), Collections.emptyList());
+        createBackend = new Assignment("backend",20, Collections.emptyList(), Arrays.asList(createFrontend));
+        Networkplan networkplan = new Networkplan(Arrays.asList(createBackend, createFrontend));
+        for (int i = 0; i < networkplan.getAssignments().size(); i++) {
+            System.out.println(networkplan.getAssignments().get(i).name);
+            System.out.println("->.................................................");
+            for (int j = 0; j < networkplan.getAssignments().get(i).getSuccessors().size(); j++) {
+                System.out.println(networkplan.getAssignments().get(i).getSuccessors().get(j).name);
+            }
+            System.out.println(" ");
+        }
         NetworkplanCalculator.fillNetworkplan(networkplan);
         List<String> critialPath = NetworkplanCalculator.calculateCriticalPath(networkplan);
-
 
 
     }

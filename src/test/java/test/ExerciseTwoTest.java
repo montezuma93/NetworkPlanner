@@ -9,6 +9,14 @@ class ExerciseTwoTest {
     public void multiply(){
 
     ExerciseTwo exerciseTwo = new ExerciseTwo();
-    Assertions.assertThat(exerciseTwo.mulitply(4,2)).isEqualTo(8);
+    Assertions.assertThat(exerciseTwo.multiply(4,2)).isEqualTo(8);
     }
+
+    @Test
+    public void multiply_two(){
+
+        ExerciseTwo exerciseTwo = new ExerciseTwo();
+        Assertions.assertThat(exerciseTwo.multiply(1,2)).isEqualTo(2);
+    }
+
 }
