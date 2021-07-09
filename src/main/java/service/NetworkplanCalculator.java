@@ -11,12 +11,11 @@ public final class NetworkplanCalculator {
         Assignment assignment = getStartTask(networkplan);
         assignment.setEarliestStartDate(0);
         assignment.setEarliestEndDate(assignment.getEarliestStartDate() + assignment.getDuration());
-        /*
-        for(Assignment nextAssignment  : assignment.getSuccessors()) {
+
+      /*  for(Assignment nextAssignment  : assignment.getSuccessors()) {
             nextAssignment.setEarliestStartDate(nextAssignment.getPredecessors().get(0).getLatestStartDate());
             nextAssignment.setEarliestStartDate(nextAssignment.getEarliestStartDate() + nextAssignment.getDuration());
-        }
-        */
+        }*/
         // Calculate EarliestStartPoint, LatestStartPoint, EarliestEndPoint, LatestEndPoint
     }
 

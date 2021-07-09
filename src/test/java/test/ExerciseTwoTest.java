@@ -16,7 +16,7 @@ class ExerciseTwoTest {
     public void multiply_two(){
 
         ExerciseTwo exerciseTwo = new ExerciseTwo();
-        Assertions.assertThat(exerciseTwo.multiply(1,2)).isEqualTo(2);
+        Assertions.assertThat(exerciseTwo.multiply(0,2)).isEqualTo(0);
     }
 
 }
