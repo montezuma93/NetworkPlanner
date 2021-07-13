@@ -7,9 +7,10 @@ public class Person {
     Adresse adresse;
 
 
-    public Person(String name, Adresse adresse) {
+    public Person(String name, String email, String telefonnummer, Adresse wohnadresse){
         this.name = name;
-        this.adresse = adresse;
+        this.email = email;
+        this.telefonnummer = telefonnummer;
+        this.adresse = wohnadresse;
     }
-
 }

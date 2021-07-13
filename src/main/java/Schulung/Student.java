@@ -1,25 +1,43 @@
 package Schulung;
 
+import java.util.Objects;
+
 public class Student extends Person {
     public String matrikelnummer;
     public String note;
 
 
-    public Student(String matrikelnummerOut, String name, String noteOut, Adresse adresse) {
-        super(name, adresse);
-        this.matrikelnummer = matrikelnummerOut;
-        this.note = noteOut;
+    public Student(String mArtikelNummerOut, String name, String email, String telefonnummer, Adresse wohnadresse) {
+        super(name, email, telefonnummer, wohnadresse);
+        matrikelnummer = mArtikelNummerOut;
+    }
 
+    @Override
+    public boolean equals(Object o) {    // wenn parameter gleich sind
+        Student student = (Student) o;
+        if (this.matrikelnummer == student.matrikelnummer) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(matrikelnummer, note);
     }
 
     @Override
     public String toString() {
         return "Student{" +
                 "name='" + name + '\'' +
-                ", matrikelnummer='" + matrikelnummer + '\'' +
+                ", email='" + email + '\'' +
+                ", telefonnummer='" + telefonnummer + '\'' +
+                ", wohnadresse=" + adresse.toString() +
+                ", mArtikelNummer='" + matrikelnummer + '\'' +
                 ", note='" + note + '\'' +
-                ", adresse='" + adresse + '\'' +
                 '}';
+
     }
 
     void SichEinschreiben() {
