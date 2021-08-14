@@ -6,9 +6,6 @@ public class Professor extends Person {
     public Professor(String name, String email, String telefonnummer, Adresse adresse, float lohnOut) {
         super(name, email, telefonnummer, adresse);
         this.lohn = lohnOut;
-        Adresse wAdresse5 = new Adresse("Kasernstr.", 12479, "Graz", "Österreich");
-        Professor professor = new Professor("Peter", "email@gmail.com", "48568", wAdresse5, 3400);
-
     }
 
 }
