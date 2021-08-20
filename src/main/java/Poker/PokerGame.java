@@ -69,13 +69,13 @@ public class PokerGame {
         //Methode!!
         for(int i = 0; i < players.size(); i++) {
             Player player = players.get(i);
-            calculateDecision(player);
+            Decision decision = player.decide();//entscheiden wie viel Chips sind im pot
+            calculateDecision(decision, player);
             //Runde inkrementieren!
         }
         }
 
-    public void calculateDecision(Player player) {
-        Decision decision = player.decide();//entscheiden wie viel Chips sind im pot
+    public void calculateDecision(Decision decision, Player player) {
         switch (decision.decisionType) {
             case FOLD:
                 player.gameMember = false;
