@@ -46,6 +46,18 @@ public class PokerGameTest {
     }
 
     @Test
+    public void testDealNextCard(){
+        PokerGame pokerGame = createPokerGame(4);
+        pokerGame.allCards = pokerGame.generateCards();
+        pokerGame.dealCards();
+        pokerGame.players.get(1).gameMember = false;
+        pokerGame.dealNextCard();
+        assertEquals(pokerGame.allCards.size(), 41);
+        assertEquals(pokerGame.players.get(0).cards.size(),3);
+        assertEquals(pokerGame.players.get(1).cards.size(),2);
+    }
+
+    @Test
     public void isGameOver() {
         PokerGame pokerGame = createPokerGame(10);
         assertEquals(pokerGame.isGameOver(), false);
@@ -53,3 +65,4 @@ public class PokerGameTest {
         assertEquals(pokerGame.isGameOver(), true);
     }
 }
+
