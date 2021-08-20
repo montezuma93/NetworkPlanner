@@ -74,8 +74,8 @@ public class PokerGame {
         }
         }
 
-    private void calculateDecision(Player player) {
-        Decision decision = player.decide();
+    public void calculateDecision(Player player) {
+        Decision decision = player.decide();//entscheiden wie viel Chips sind im pot
         switch (decision.decisionType) {
             case FOLD:
                 player.gameMember = false;
@@ -85,6 +85,13 @@ public class PokerGame {
                 player.chips -= chipsNeedToBeSet;
                 pot += chipsNeedToBeSet;
             case RAISE:
+                roundSize = decision.amount; // maximale spielhöhe
+                int chipIncremntation = decision.amount - player.chipSetInRound;
+                player.chips -= chipIncremntation;
+                pot += chipIncremntation;
+                player.chipSetInRound = decision.amount;
+
+                // 2 variabilen: 1: menge zu setzen 2:
 
         }
     }
