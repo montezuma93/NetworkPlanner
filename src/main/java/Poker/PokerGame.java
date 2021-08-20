@@ -13,20 +13,32 @@ public class PokerGame {
     int pot;
     int smallBlind;
     int bigBlind;
+    int roundSize;
 
     public PokerGame(List<Player> players, int smallBlind, int bigBlind) {
+        int roundSize = bigBlind;
         this.players = players;
         this.smallBlind = smallBlind;
         this.bigBlind = bigBlind;
+        this.pot = 0;
+
     }
 
     public void startGame() {
         allCards = generateCards();
         dealCards();
+        setBlinds();
         while (!isGameOver()) {
             // start next round
         }
         System.out.println("GameOver");
+
+    }
+    public void setBlinds(){
+        players.get(0).dealer = true;
+        players.get(1).smallBlind = true;
+        players.get(2).bigBlind = true;
+
     }
 
     public boolean isGameOver() {
@@ -38,6 +50,46 @@ public class PokerGame {
         }
         return amountOfPlayersWithChips < 2;
     }
+    public void startRounds(){
+        for (int i = 0; i < 4; i++){
+            startRound();
+            dealNextCard();//Neu Karte verteilen!
+        }
+    }
+    public void dealNextCard(){
+        for(int i = 0; i < players.size(); i++){
+            Player player = players.get(i);
+            if(player.gameMember){
+                dealLastCard(player);//jeder Player hat eigene Liste (cards)
+            }
+        }
+    }
+
+    public void startRound(){
+        //Methode!!
+        for(int i = 0; i < players.size(); i++) {
+            Player player = players.get(i);
+            calculateDecision(player);
+            //Runde inkrementieren!
+        }
+        }
+
+    private void calculateDecision(Player player) {
+        Decision decision = player.decide();
+        switch (decision) {
+            case FOLD:
+                player.gameMember = false;
+            case CALL:
+                int chipsNeedToBeSet = roundSize - player.chipSetInRound;
+                player.chipSetInRound = player.chipSetInRound + chipsNeedToBeSet;
+                player.chips -= chipsNeedToBeSet;
+                pot += chipsNeedToBeSet;
+            case RAISE: //
+
+
+
+        }
+    }
 
 
     public void dealCards() {
@@ -47,11 +99,15 @@ public class PokerGame {
         for (int i = 0; i < players.size(); i++) {
             Player player = players.get(i);     // erster Player usw.
             for (int j = 0; j < 2; j++) { //0 <2 -> true 1<2 -> true 2<2 -false
-                Card card = allCards.get(allCards.size() - 1);        // Karte in der Hand
-                allCards.remove(card);  // Karte wird aus allCards entfernt
-                player.addCard(card);       // Spieler bekommt die Karte
+                dealLastCard(player);
             }
         }
+    }
+
+    private void dealLastCard(Player player) {
+        Card card = allCards.get(allCards.size() - 1);        // Karte in der Hand
+        allCards.remove(card);  // Karte wird aus allCards entfernt
+        player.addCard(card);       // Spieler bekommt die Karte
     }
 
     public List<Card> generateCards() {
