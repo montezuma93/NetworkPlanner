@@ -27,7 +27,7 @@ public class Player {
         this.cards.add(card);
     }
     public Decision decide(){
-        return Decision.CALL;
+        return new Decision(DecisionType.CALL);
     }
 
 }

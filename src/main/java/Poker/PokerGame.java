@@ -76,7 +76,7 @@ public class PokerGame {
 
     private void calculateDecision(Player player) {
         Decision decision = player.decide();
-        switch (decision) {
+        switch (decision.decisionType) {
             case FOLD:
                 player.gameMember = false;
             case CALL:
@@ -84,9 +84,7 @@ public class PokerGame {
                 player.chipSetInRound = player.chipSetInRound + chipsNeedToBeSet;
                 player.chips -= chipsNeedToBeSet;
                 pot += chipsNeedToBeSet;
-            case RAISE: //
-
-
+            case RAISE:
 
         }
     }
