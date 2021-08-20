@@ -24,11 +24,19 @@ public class PokerGame {
         allCards = generateCards();
         dealCards();
         while (!isGameOver()) {
+            // start next round
         }
+        System.out.println("GameOver");
     }
 
-    public boolean isGameOver() { // Berechnung fehlt noch
-        return true;
+    public boolean isGameOver() {
+        int amountOfPlayersWithChips = 0;
+        for (int i = 0; i < players.size(); i++) {
+            if (players.get(i).chips > 0) {
+                amountOfPlayersWithChips++;
+            }
+        }
+        return amountOfPlayersWithChips < 2;
     }
 
 
