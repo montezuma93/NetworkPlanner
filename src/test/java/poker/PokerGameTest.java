@@ -1,6 +1,6 @@
 package poker;
 
-import Poker.Card;
+import Poker.domain.Card;
 import Poker.Player;
 import Poker.PokerGame;
 import org.junit.jupiter.api.Test;

@@ -1,5 +1,11 @@
 package Poker;
 
+import Poker.domain.Card;
+import Poker.domain.Color;
+import Poker.domain.Combination;
+import Poker.domain.Decision;
+import Poker.domain.Number;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -118,7 +124,7 @@ public class PokerGame {
     public List<Card> generateCards() {
         List<Card> cards = new ArrayList<>();
         List<Color> colors = Arrays.asList(Color.values());
-        List<Number> numbers = Arrays.asList(Number.values());
+        List<Poker.domain.Number> numbers = Arrays.asList(Number.values());
 
         for (int i = 0; i < numbers.size(); i++) {
             for (int j = 0; j < colors.size(); j++) {
