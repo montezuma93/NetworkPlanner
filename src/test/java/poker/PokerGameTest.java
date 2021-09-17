@@ -5,6 +5,7 @@ import Poker.Player;
 import Poker.PokerGame;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -41,7 +42,7 @@ public class PokerGameTest {
         Player player2 = new Player("Saskia", 0);
         Player player3 = new Player("Christian", 3000);
         Player player4 = new Player("Sarah", 0);
-        PokerGame pokerGame = new PokerGame(List.of(player1, player2, player3, player4), 50, 100);
+        PokerGame pokerGame = new PokerGame(Arrays.asList(player1, player2, player3, player4), 50, 100);
         return pokerGame;
     }
 
