@@ -5,16 +5,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url(https://wallpapercave.com/wp/wp2577090.jpg);" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers">
    <children>
-      <Button layoutX="175.0" layoutY="131.0" mnemonicParsing="false" onAction="#switchToScene1" text="Scene 1">
+      <Button layoutX="437.0" layoutY="65.0" mnemonicParsing="false" onAction="#switchToScene1" opacity="0.75" text="Scene 1">
          <font>
-            <Font size="32.0" />
+            <Font size="30.0" />
          </font>
       </Button>
-      <Text layoutX="145.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scene 2 ist hier.">
+      <Text fill="WHITE" layoutX="432.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scene 2">
          <font>
-            <Font size="31.0" />
+            <Font size="45.0" />
          </font>
       </Text>
    </children>
