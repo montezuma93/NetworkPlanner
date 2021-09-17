@@ -1,10 +1,10 @@
-package Poker;
+package Poker.domain;
 
 public class Card {
     Color color;
     Number number;
 
-    Card(Color color, Number number) {
+    public Card(Color color, Number number) {
         this.color = color;
         this.number = number;
     }

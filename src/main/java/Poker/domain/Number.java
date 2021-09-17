@@ -1,4 +1,4 @@
-package Poker;
+package Poker.domain;
 
 public enum Number {
     TWO,
