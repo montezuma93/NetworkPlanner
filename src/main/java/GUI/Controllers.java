@@ -39,13 +39,13 @@ public class Controllers {
         stage.show();
     }
 
-    public void switchToScene1(ActionEvent event) throws IOException {
+    /*public void switchToScene1(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/testFX.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-    }
+    }*/
 
     public void spawnCircle(ActionEvent event) throws IOException {
         Stage stage = (Stage) pane.getScene().getWindow();
