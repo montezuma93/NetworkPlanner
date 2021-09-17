@@ -9,4 +9,12 @@ public class Book {
         this.title = title;
         this.amountOfBooksAvailable = amountOfBooksAvailable;
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "Title='" + title + '\'' +
+                ", Amount of books available=" + amountOfBooksAvailable +
+                '}';
+    }
 }
