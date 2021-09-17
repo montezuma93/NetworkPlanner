@@ -1,16 +1,16 @@
-package Poker;
+package Poker.domain;
 
 public class Decision {
 
-    DecisionType decisionType;
-    int amount;
+    public DecisionType decisionType;
+    public int amount;
 
-    Decision(DecisionType decisionType, int amount) {
+    public Decision(DecisionType decisionType, int amount) {
         this.decisionType = decisionType;
         this.amount = amount;
     }
 
-    Decision(DecisionType decisionType) {
+    public Decision(DecisionType decisionType) {
         if(decisionType == DecisionType.RAISE) {
             throw new IllegalStateException("No way to choose 'Raise' without specifying the amount");
         }
