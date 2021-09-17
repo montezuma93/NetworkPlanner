@@ -28,8 +28,9 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
+
 
 
 @Controller
@@ -95,6 +96,9 @@ public class LibraryController {
         String bTitle = bookTitle.getText();
         int bAmount = Integer.parseInt(bookAmount.getText());
         libraryService.addBook(new Book(bTitle, bAmount));
+        //resultField.setText("Added!");
+        bookTitle.clear();
+        bookAmount.clear();
     }
 
     @FXML
@@ -103,7 +107,10 @@ public class LibraryController {
         Pane pane = (Pane) stage.getScene().getRoot();
 
         List<Book> availableBooks = libraryService.getBook();
-        System.out.println(availableBooks);
-        showBooksArea.setText(availableBooks.toString());
+        System.out.println(Arrays.toString(availableBooks.toArray()));
+
+        for (int i=0; i<availableBooks.size(); i++){
+            showBooksArea.appendText(availableBooks.get(i).toString() + "\n");
+        }
     }
 }
