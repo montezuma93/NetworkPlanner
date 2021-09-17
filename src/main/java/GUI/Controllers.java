@@ -32,7 +32,7 @@ public class Controllers {
     private TextField speedInput;
 
     public void switchToScene2(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/Scene2fx.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
