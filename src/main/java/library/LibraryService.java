@@ -1,6 +1,10 @@
 package library;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 
@@ -8,7 +12,8 @@ import java.util.List;
 public class LibraryService {
     Library library;
 
-    public LibraryService(){
+    @Autowired
+    public LibraryService() {
         System.out.println("Initializing library...");
         library = new Library();
         System.out.println("Library initialized");

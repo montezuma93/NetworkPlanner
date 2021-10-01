@@ -44,8 +44,8 @@ public class LibraryController {
     @FXML private Button addBookButton;
     @FXML private Button showBooksButton;
 
-    //@Autowired
-    LibraryService libraryService = new LibraryService();  //what I've changed
+    @Autowired
+    LibraryService libraryService;
 
     public void switchToScene1(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/testFX.fxml"));
