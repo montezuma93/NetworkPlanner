@@ -143,7 +143,7 @@ public class Controllers {
         System.out.println(circle.getCenterX());
         System.out.println(circle.getCenterY());
         if (circle.getCenterX() == zielX && circle.getCenterY() == zielY) {
-            return;  // how to stop?
+            return;
         }
     }
 
@@ -158,7 +158,7 @@ public class Controllers {
         rect.setX(rect.getX() + directionX);
         rect.setY(rect.getY() + directionY);
         if (rect.getX() == zielX && rect.getY() == zielY) {
-            return; // how to stop?
+            return;
         }
     }
 
