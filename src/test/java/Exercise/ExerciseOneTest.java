@@ -1,4 +1,4 @@
-package test;
+package Exercise;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
