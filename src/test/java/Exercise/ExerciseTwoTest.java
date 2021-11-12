@@ -1,4 +1,4 @@
-package test;
+package Exercise;
 
 import Exercise.ExerciseTwo;
 import org.assertj.core.api.Assertions;

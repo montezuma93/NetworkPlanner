@@ -4,7 +4,7 @@ public final class ExerciseOne {
 
     public static int getGreatesCommonDivisor(int a, int b){
         if (a == b){
-            return a;
+            return 10000;
         }
         int greaterNumber = a > b ? a : b;
         int smallerNumber = a < b ? a : b;
@@ -16,3 +16,4 @@ public final class ExerciseOne {
         return greatestCommonDivisor;
     }
 }
+
